@@ -3,10 +3,10 @@ package main.com.pollra.util;
 import java.io.*;
 
 public class HtmlParser {
-    private final String path = "src/main/resources/";
+    private final String defualtPath = "src/main/resources/";
     private String parsingData = null;
     public String HtmlParser(String fileName){
-        File file = new File(path + fileName + ".html");
+        File file = new File(defualtPath + fileName + ".html");
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String fileContent;
