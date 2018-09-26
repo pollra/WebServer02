@@ -20,6 +20,7 @@ public class RequestController implements Runnable{
             if(requestLine == null){
                 return;
             }
+            System.out.println(requestLine);
             String temp;
             while(!((temp = br.readLine()).isEmpty())){
                 System.out.println(temp);
