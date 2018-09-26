@@ -1,7 +1,10 @@
 package main.com.pollra.server;
 
+import main.com.pollra.client.RequestController;
+
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -24,9 +27,10 @@ public class Server {
         private static final Server instance = new Server();
     }
 
-    public void start(){
+    public void start() throws IOException{
         while(true){
-
+            Socket socket = serverSocket.accept();
+            Runnable task = new RequestController(socket);
         }
     }
 
