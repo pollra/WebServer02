@@ -21,10 +21,17 @@ public class RequestController implements Runnable{
                 return;
             }
             System.out.println(requestLine);
-            String temp;
+            String temp, responseLine = "";
             while(!((temp = br.readLine()).isEmpty())){
-                System.out.println(temp);
+                responseLine += temp + "\r\n";
             }
+
+            /**
+             * HttpHeandler 가 어떤 페이지를 보낼지 파악한 뒤 body를 리턴.
+             * 그 뒤,
+             */
+
+
         }catch(IOException e){
             e.printStackTrace();
         }
