@@ -43,7 +43,6 @@ public class RequestController implements Runnable{
             byte[] body = Files.readAllBytes(new File(defualtPath + "index.html").toPath());
             HttpResponse.ResponseBuilder builder = new HttpResponse.ResponseBuilder(HttpStatus.OK);
             httpResponse = builder
-                    .addHeader("Content-Encoding:", "UTF-8")
                     .addHeader("Content-Type:","text/html; charset=utf-8")
                     .addHeader("Content-Length:", body.length+"")
                     .build();
