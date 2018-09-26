@@ -31,6 +31,7 @@ public class Server {
         while(true){
             Socket socket = serverSocket.accept();
             Runnable task = new RequestController(socket);
+            executorService.execute(task);
         }
     }
 
